@@ -1,13 +1,7 @@
-use std::io;
+mod math;
+mod greet;
 
 fn main() {
-    let mut name = String::new();
-
-    io::stdin()
-        .read_line(&mut name)
-        .expect("Failed to read line");
-
-    let name = name.trim();
-
-    println!("Hello, {}!", name);
+    math::add_numbers(4, 5);
+    greet::greet();
 }
