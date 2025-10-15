@@ -1,3 +1,5 @@
+use std::fmt::Debug;
+
 #[warn(unused_assignments)]
 
 pub fn variables() {
@@ -19,6 +21,23 @@ pub fn variables() {
     println!("{}", a);
 
     data_types();
+
+    // Memory & Ownership Behavior
+
+    let s1 = String::from("Hello");
+    let s2 = s1; // Ownership moves to 2
+
+    // println!("{}", s1); // s1 no longer valid
+    println!("{}", s2);
+
+
+    // Cloning
+    let ss1 = String::from("Hello");
+    let ss2 = ss1.clone();
+    println!("{}, {}", ss1, ss2);
+
+    const MAX_POINTS: u32 = 100_000;
+    static HELLO: &str = "Hello, World";
 }
 
 fn data_types() {
